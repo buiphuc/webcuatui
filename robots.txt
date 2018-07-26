@@ -1,0 +1,17 @@
+User-Agent: *
+Disallow: /admin.php
+Allow: /
+Disallow: /-c23850.html
+Disallow: /luyen-thi-vao-10-chuyen-hoa-c23850.html
+Disallow: /-c23838.html
+Disallow: /50-de-luyen-thi-vao-10-mon-toan-c23838.html
+Disallow: /50-de-luyen-thi-vao-10-mon-toan-c23924.html
+Disallow: /wp-admin/
+Disallow: /members-2/
+Disallow: /members-3/
+Disallow: /courses/
+Disallow: /teachers/
+Disallow: /lessons/
+Disallow: /course-category/
+Disallow: /wp-content/
+Disallow: /def/	
