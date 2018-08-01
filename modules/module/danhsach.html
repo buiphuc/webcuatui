@@ -1,0 +1,126 @@
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive table--no-card m-b-30">
+                        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#themmoi">Thêm mới Modules</button>
+                        <table id="datatablemodule" class="table">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>ID</th>
+                                    <th>Tên Chức Năng</th>
+                                    <th>Chức Năng</th>
+                                    <th>Thời Gian</th>
+                                    <th>Xuất Bản</th>
+                                </tr>
+                            </thead>
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="themmoi" tabindex="-1" role="dialog" aria-labelledby="mediumModalLabel" style="display: none;" aria-hidden="true">
+	<div class="modal-dialog modal-lg" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="card">
+                    <div class="card-header">
+                        <strong>Thêm mới</strong>
+                        <small> Modules</small>
+                    </div>
+                    <div class="card-body card-block" id="box-themmodules">
+                        <div class="form-group">
+                            <label for="company" class=" form-control-label">Tên Modules</label>
+                            <input type="text" id="ten" placeholder="Nhập vào tên modules" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="vat" class=" form-control-label">Chức năng</label>
+                            <input type="text" id="chucnag" placeholder="Chức năng modules" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="street" class=" form-control-label">Thuộc chức năng</label>
+                            <select class="form-control" id="me">
+                                <option value="0">Chọn chức năng</option>
+                                $option_chucnang
+                            </select>
+                        </div>
+                    </div>
+                </div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-dismiss="modal" >Cancel</button>
+				<button type="button" id="button_them" class="btn btn-primary" onclick="themmodules()">Thêm Modules</button>
+                <div id="result"></div>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="/modules/module/script.js"></script>
+<script>
+$(document).ready(function(){
+    
+    table = $('#datatablemodule').DataTable({
+		"columnDefs": [
+        	{"className": "dt-center", "targets": "_all"}
+      	],
+		ajax: {
+        	url: 'modules/module/load_data.php',
+			dataSrc: ''
+    	},
+		columns: [
+			{ 
+                "className":      'details-control',
+                "orderable":      false,
+                "data":           null,
+                "defaultContent": '+'
+            },
+			{ data: 'id' },
+			{ data: 'ten' },
+			{ data: 'chucnang' },
+			{ data: 'thoigian' },
+            { data: 'xuatban' },
+            
+		],
+		
+	});
+   // $('#datatablemodule tbody').on('click', 'td.details-control', function () {
+//        var tr = $(this).closest('tr');
+//        var row = table.row( tr );
+// 
+//        if ( row.child.isShown() ) {
+//            row.child.hide();
+//            tr.removeClass('shown');
+//        } else {
+//            
+//            $.ajax({
+//               url:'',
+//               success:function(r){
+//                
+//               }
+//               
+//            });
+//            row.child( format(row.data()) ).show();
+//            tr.addClass('shown');
+//        }
+//    } );
+});
+
+//function format ( d ) {
+//    return '<table cellpadding="0" cellspacing="0" border="0" style="padding-left:50px;">'+
+//        		'<tr>'+
+//                    
+//                '</tr>'+
+//        '</table>';
+//}	
+</script>
+

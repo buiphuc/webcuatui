@@ -1,0 +1,123 @@
+<div class="main-content">
+    <div class="section__content section__content--p30">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="table-responsive table--no-card m-b-30">
+                        <div class="card">
+                            <div class="card-header">
+                                <strong>Thêm mới </strong>danh mục
+                                <a href="/admin.php?f=quan-ly-danh-muc&action=danh-sach" class="btn btn-danger btn-sm pull-right"><i class="fas fa-backward"></i> Back</a>
+                            </div>
+                            <div class="card-body card-block">
+                                <div class="form-horizontal">
+                                    <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label for="text-input" class=" form-control-label">Tên danh mục</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <input type="text" id="ten" name="text-input" placeholder="Tên danh mục" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label for="select" class=" form-control-label">Danh mục mẹ</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <select name="select" id="me" class="form-control">
+                                                    <option value="0">Danh mục gốc</option>
+                                                    $categories
+                                                </select>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label class=" form-control-label">Tùy chọn</label>
+                                            </div>
+                                            <div class="col col-md-9">
+                                                <div class="form-check-inline form-check">
+                                                    <label for="inline-checkbox1" class="form-check-label ">
+                                                        <input type="checkbox" id="xuatban" name="inline-checkbox1" value="option1" class="form-check-input">Xuất bản
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label for="text-input" class=" form-control-label">Title</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <input type="text" id="title" name="text-input" placeholder="Title" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label for="text-input" class=" form-control-label">Description</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <textarea id="description" class="form-control" placeholder="Description" rows="4"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="row form-group">
+                                            <div class="col col-md-3">
+                                                <label for="text-input" class=" form-control-label">Keyword</label>
+                                            </div>
+                                            <div class="col-12 col-md-9">
+                                                <textarea id="keyword" class="form-control" placeholder="Keyword" rows="4"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="row form-group">
+                                        <div class="col col-md-3">
+                                            <label for="text-input" class=" form-control-label">Mô tả</label>
+                                        </div>
+                                        <div class="col-12 col-md-9">
+                                            <textarea class="mota" id="mota"></textarea>
+                                        </div>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-footer">
+                                <button type="submit" class="btn btn-primary btn-sm" id="themdanhmuc">
+                                    <i class="fa fa-dot-circle-o"></i> Thêm mới
+                                </button>
+                                <button type="reset" class="btn btn-danger btn-sm" onclick="location.reload();">
+                                    <i class="fa fa-ban"></i> Reset
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    	tinymce.init({
+            selector: '.mota',
+            theme: 'modern', 
+			mode : "textareas",
+			fontsize_formats: '8px 10px 11px 12px 14px 18px 24px 36px 72px',
+            width: 'auto',
+            height: 300,
+            plugins: [
+                'advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker',
+                'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking',
+                'save table contextmenu directionality emoticons template paste textcolor qrcode youtube responsivefilemanager'
+            ],
+            toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons qrcode youtube responsivefilemanager fontsizeselect',
+            external_filemanager_path:"/filemanager/",
+            filemanager_title:"Quản lý file Vinastudy" ,
+            filemanager_crossdomain: true,
+            external_plugins: { "filemanager" : "/filemanager/plugin.min.js" },
+            image_advtab: true,
+            media_live_embeds: true
+        });
+</script>
